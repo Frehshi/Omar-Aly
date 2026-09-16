@@ -1,0 +1,20 @@
+{
+  "layout": "tisso",
+  "sections": {
+    "banner": { "type": "tisso-banner", "settings": {} },
+    "grid": {
+      "type": "tisso-grid",
+      "settings": {},
+      "blocks": {
+        "look1": { "type": "product", "settings": { "x": 62, "y": 56 } },
+        "look2": { "type": "product", "settings": { "x": 85, "y": 53 } },
+        "look3": { "type": "product", "settings": { "x": 63, "y": 21 } },
+        "look4": { "type": "product", "settings": { "x": 72, "y": 18 } },
+        "look5": { "type": "product", "settings": { "x": 52, "y": 26 } },
+        "look6": { "type": "product", "settings": { "x": 76, "y": 40 } }
+      },
+      "block_order": ["look1", "look2", "look3", "look4", "look5", "look6"]
+    }
+  },
+  "order": ["banner", "grid"]
+}

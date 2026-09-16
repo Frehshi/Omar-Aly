@@ -10,10 +10,10 @@
 {% style %}
   {{ section.settings.body_font | font_face: font_display: 'swap' }}
   {{ light_font | font_face: font_display: 'swap' }}
-  {{ section.settings.heading_font | font_face: font_display: 'swap' }}
+  @font-face { font-family: 'Lustria'; src: url('{{ 'tisso-lustria.ttf' | asset_url }}') format('truetype'); font-style: normal; font-weight: 400; font-display: swap; }
   #shopify-section-{{ section.id }} {
     --tisso-body-font: {{ section.settings.body_font.family }}, {{ section.settings.body_font.fallback_families }};
-    --tisso-grid-font: {{ section.settings.heading_font.family }}, {{ section.settings.heading_font.fallback_families }};
+    --tisso-grid-font: {{ section.settings.heading_font }}, Georgia, serif;
   }
 {% endstyle %}
 <tisso-grid class="tisso-grid" id="tisso-products" data-cart-add="{{ routes.cart_add_url }}.js" data-cart-url="{{ routes.cart_url }}" data-bonus-id="{{ bonus_variant.id }}" data-bonus-available="{{ bonus_variant.available }}">
@@ -92,7 +92,7 @@
     { "type": "text", "id": "heading", "label": "Heading", "default": "Tisso vison in the wild" },
     { "type": "product", "id": "bonus_product", "label": "Soft Winter Jacket", "info": "Select the Soft Winter Jacket product. Its first available variant is also added for every Black + Medium selection." },
     { "type": "font_picker", "id": "body_font", "label": "Popup font", "default": "jost_n4" },
-    { "type": "font_picker", "id": "heading_font", "label": "Grid heading font", "default": "lustria_n4" }
+    { "type": "select", "id": "heading_font", "label": "Grid heading font", "options": [{ "value": "Lustria", "label": "Lustria (Figma)" }, { "value": "Georgia", "label": "Georgia" }], "default": "Lustria" }
   ],
   "blocks": [{
     "type": "product",

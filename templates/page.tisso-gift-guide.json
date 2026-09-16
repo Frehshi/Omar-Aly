@@ -4,7 +4,7 @@
     "banner": { "type": "tisso-banner", "settings": {} },
     "grid": {
       "type": "tisso-grid",
-      "settings": {},
+      "settings": { },
       "blocks": {
         "look1": { "type": "product", "settings": { "x": 62, "y": 56 } },
         "look2": { "type": "product", "settings": { "x": 85, "y": 53 } },

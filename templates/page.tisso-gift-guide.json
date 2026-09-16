@@ -1,20 +1,115 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "layout": "tisso",
   "sections": {
-    "banner": { "type": "tisso-banner", "settings": {} },
+    "banner": {
+      "type": "tisso-banner",
+      "settings": {
+        "brand": "TISSO VISON",
+        "top_message": "Find the ideal gift for your loved ones.",
+        "choose_label": "CHOOSE GIFT",
+        "choose_link": "",
+        "heading": "The Gift Guide",
+        "description": "Discover Joy: Your Ultimate Holiday Gift Destination.\nExplore our curated selection and find the perfect gifts to\ndelight your loved ones this holiday season.",
+        "mobile_description": "Discover Joy: Your Ultimate Holiday Gift Destination.",
+        "shop_label": "SHOP NOW",
+        "shop_link": "",
+        "bottom_message": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL",
+        "mobile_bottom_message": "SUSTAINABLE, ETHICALLY MADE ACTIVEWEAR",
+        "body_font": "jost_n4",
+        "heading_font": "jost_n6"
+      }
+    },
     "grid": {
       "type": "tisso-grid",
-      "settings": { },
       "blocks": {
-        "look1": { "type": "product", "settings": { "x": 62, "y": 56 } },
-        "look2": { "type": "product", "settings": { "x": 85, "y": 53 } },
-        "look3": { "type": "product", "settings": { "x": 63, "y": 21 } },
-        "look4": { "type": "product", "settings": { "x": 72, "y": 18 } },
-        "look5": { "type": "product", "settings": { "x": 52, "y": 26 } },
-        "look6": { "type": "product", "settings": { "x": 76, "y": 40 } }
+        "look1": {
+          "type": "product",
+          "settings": {
+            "product": "black-leather-bag",
+            "x": 62,
+            "y": 56,
+            "mobile_x": 65,
+            "mobile_y": 14
+          }
+        },
+        "look2": {
+          "type": "product",
+          "settings": {
+            "product": "blue-silk-tuxedo",
+            "x": 85,
+            "y": 53,
+            "mobile_x": 65,
+            "mobile_y": 14
+          }
+        },
+        "look3": {
+          "type": "product",
+          "settings": {
+            "product": "chequered-red-shirt",
+            "x": 63,
+            "y": 21,
+            "mobile_x": 65,
+            "mobile_y": 14
+          }
+        },
+        "look4": {
+          "type": "product",
+          "settings": {
+            "product": "classic-leather-jacket",
+            "x": 72,
+            "y": 18,
+            "mobile_x": 65,
+            "mobile_y": 14
+          }
+        },
+        "look5": {
+          "type": "product",
+          "settings": {
+            "product": "classic-varsity-top",
+            "x": 52,
+            "y": 26,
+            "mobile_x": 65,
+            "mobile_y": 14
+          }
+        },
+        "look6": {
+          "type": "product",
+          "settings": {
+            "product": "dark-denim-top",
+            "x": 76,
+            "y": 40,
+            "mobile_x": 65,
+            "mobile_y": 14
+          }
+        }
       },
-      "block_order": ["look1", "look2", "look3", "look4", "look5", "look6"]
+      "block_order": [
+        "look1",
+        "look2",
+        "look3",
+        "look4",
+        "look5",
+        "look6"
+      ],
+      "settings": {
+        "heading": "Tisso vison in the wild",
+        "bonus_product": "dark-winter-jacket",
+        "body_font": "jost_n4",
+        "heading_font": "Lustria"
+      }
     }
   },
-  "order": ["banner", "grid"]
+  "order": [
+    "banner",
+    "grid"
+  ]
 }

@@ -164,7 +164,7 @@
       if (this.busy || !this.variant?.available) return;
       const selectedVariant = this.variant;
       const normalized = selectedVariant.options.map((value) => value.trim().toLowerCase());
-      const needsJacket = normalized.includes('black') && normalized.includes('medium');
+      const needsJacket = normalized.includes('black') && normalized.some((value) => value === 'medium' || value === 'm');
       const items = [{ id: selectedVariant.id, quantity: 1 }];
       if (needsJacket) {
         const bonusId = Number(this.dataset.bonusId);

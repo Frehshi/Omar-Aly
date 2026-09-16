@@ -1,0 +1,125 @@
+/* This page owns its layout and controls; no existing theme components are used. */
+.tisso-page { margin: 0; background: #fff; color: #000; }
+html:has(> .tisso-page) { scrollbar-width: none; }
+html:has(> .tisso-page)::-webkit-scrollbar { display: none; }
+.tisso-page *, .tisso-banner *, .tisso-grid * { box-sizing: border-box; }
+.tisso-banner, .tisso-grid { display: block; font-family: var(--tisso-body-font, 'Jost', sans-serif); color: #000; }
+.tisso-banner a, .tisso-grid a { color: inherit; text-decoration: none; }
+.tisso-banner button, .tisso-grid button, .tisso-grid select { font: inherit; border-radius: 0; }
+.tisso-banner p, .tisso-banner h1, .tisso-grid h2, .tisso-grid h3, .tisso-grid p { margin: 0; }
+.tisso-skip { position: fixed; top: -100px; left: 16px; z-index: 100; padding: 12px; background: white; color: black; }
+.tisso-skip:focus { top: 12px; }
+.tisso-banner :focus-visible, .tisso-grid :focus-visible { outline: 2px solid #194e8b; outline-offset: 4px; }
+.tisso-bar { position: relative; min-height: 64px; padding: 10px 50px; background: #f5f5f5; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 20px; }
+.tisso-brand { font-size: 24px; line-height: 1; font-weight: 500; white-space: nowrap; }
+.tisso-bar-message { font-size: 16px; line-height: 24px; text-align: center; }
+.tisso-button { position: relative; isolation: isolate; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; gap: 28px; min-height: 50px; padding: 10px 24px; border: 0; background: #000; color: #fff !important; font-size: 16px; font-weight: 400; cursor: pointer; }
+.tisso-button::before { content: ''; position: absolute; inset: 0; z-index: -1; background: #fff544; transform: translateX(-101%); transition: transform 350ms ease; }
+.tisso-button:hover, .tisso-button:focus-visible { color: #000 !important; }
+.tisso-button:hover::before, .tisso-button:focus-visible::before { transform: translateX(0); }
+.tisso-arrow { display: inline-block; font-family: Arial, sans-serif; font-size: 32px; line-height: 20px; transition: transform 350ms ease; }
+.tisso-button:hover .tisso-arrow { transform: translateX(5px); }
+.tisso-button--yellow { background: #fff544; color: #000 !important; }
+.tisso-button--yellow::before { background: #000; }
+.tisso-button--yellow:hover, .tisso-button--yellow:focus-visible { color: #fff !important; }
+.tisso-top-button { justify-self: end; width: 207px; min-height: 44px; gap: 16px; padding-inline: 16px; white-space: nowrap; }
+.tisso-menu-toggle, .tisso-mobile-menu { display: none; }
+.tisso-hero { position: relative; height: 780px; overflow: hidden; background: white; }
+.tisso-art { position: absolute; overflow: hidden; pointer-events: none; }
+.tisso-art img { display: block; width: 100%; height: auto; max-width: none; }
+.tisso-art--top { top: 0; left: 0; width: 100%; height: 390px; }
+.tisso-art--top img { transform: translateY(-29%); }
+.tisso-art--bottom { left: 38.4%; top: 390px; width: 100%; }
+.tisso-mobile-art { display: none !important; }
+.tisso-hero-copy { position: absolute; left: 4.65%; top: 414px; width: 39%; z-index: 1; }
+.tisso-hero h1 { font-family: var(--tisso-heading-font, 'Jost', sans-serif); font-weight: 600; font-size: 70px; line-height: 1.2; letter-spacing: 0; white-space: nowrap; }
+.tisso-description { margin-top: 45px !important; font-size: 20px; line-height: 28px; }
+.tisso-description--mobile { display: none; }
+.tisso-shop-button { margin-top: 50px; width: 220px; }
+.tisso-strip { display: flex; align-items: center; justify-content: center; min-height: 36px; padding: 6px 12px; background: #f5f5f5; font-size: 16px; line-height: 24px; text-align: center; }
+.tisso-strip-mobile { display: none; }
+.tisso-grid { padding: 90px 50px 50px; scroll-margin-top: 20px; }
+.tisso-grid-heading { font-family: var(--tisso-grid-font, 'Lustria', Georgia, serif); font-size: 36px; line-height: 1.3; font-weight: 400; margin-bottom: 30px !important; }
+.tisso-products { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.tisso-product { position: relative; overflow: hidden; aspect-ratio: 433 / 444; }
+.tisso-product > img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.tisso-hotspot { position: absolute; left: var(--hotspot-x); top: var(--hotspot-y); transform: translate(-50%, -50%); width: 22px; height: 22px; border: 0; background: #f5f5f5e6; color: #000; padding: 5px; display: grid; place-items: center; cursor: pointer; border-radius: 50% !important; }
+/* Enlarged invisible hit area keeps the small Figma circle usable by touch. */
+.tisso-hotspot::after { content: ''; position: absolute; inset: -11px; border-radius: 50%; }
+.tisso-hotspot:hover { background: white; }
+.tisso-hotspot:focus-visible { outline-offset: 8px; }
+.tisso-editor-note { position: absolute; left: 8px; bottom: 8px; background: white; padding: 8px; font-size: 14px; }
+.tisso-dialog { width: 311px; max-width: calc(100vw - 32px); max-height: calc(100dvh - 32px); padding: 36px 20px 25px; margin: auto; border: 0; background: white; color: black; box-shadow: 0 2px 5px #0003; font-family: var(--tisso-body-font, 'Jost', sans-serif); overflow-y: auto; }
+.tisso-dialog::backdrop { background: rgb(0 0 0 / 25%); }
+html.tisso-modal-open { overflow: hidden; }
+.tisso-close { position: absolute; right: 8px; top: 7px; display: grid; place-items: center; width: 30px; height: 26px; padding: 0; border: 0; background: transparent; cursor: pointer; color: black; }
+.tisso-summary { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 8px; align-items: start; }
+.tisso-popup-image { width: 120px; height: 140px; object-fit: cover; }
+.tisso-popup-title { font-size: 16px; line-height: 20px; font-weight: 300; padding-top: 13px; }
+.tisso-popup-price { font-size: 16px; line-height: 22px; margin-top: 17px !important; }
+.tisso-popup-description { margin-top: 10px !important; font-size: 12px; line-height: 15px; font-weight: 300; overflow-wrap: anywhere; }
+.tisso-options { margin-top: 10px; }
+.tisso-option { margin: 0 0 10px; padding: 0; border: 0; min-width: 0; }
+.tisso-option legend, .tisso-option > label { display: block; padding: 0; margin-bottom: 6px; font-size: 14px; line-height: 18px; }
+.tisso-colors { display: flex; flex-wrap: wrap; border-top: 1px solid #777; border-left: 1px solid #777; }
+.tisso-color { position: relative; flex: 1 1 50%; min-width: 0; cursor: pointer; }
+.tisso-color input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.tisso-color span { display: block; position: relative; padding: 10px 10px 10px 14px; min-height: 41px; border-right: 1px solid #777; border-bottom: 1px solid #777; font-size: 18px; line-height: 20px; }
+.tisso-color span::before { position: absolute; content: ''; inset: 0 auto 0 0; width: 5px; background: var(--swatch, #777); }
+.tisso-color input:checked + span { background: black; color: white; }
+.tisso-color input:focus-visible + span { outline: 2px solid #194e8b; outline-offset: -3px; }
+.tisso-color input:disabled + span { opacity: .4; cursor: not-allowed; }
+.tisso-select-wrap { position: relative; }
+.tisso-select-wrap::after { content: ''; position: absolute; width: 9px; height: 9px; border-right: 1.5px solid black; border-bottom: 1.5px solid black; right: 19px; top: 14px; transform: rotate(45deg); pointer-events: none; }
+.tisso-select-wrap::before { content: ''; position: absolute; right: 54px; top: 0; bottom: 0; border-left: 1px solid #888; pointer-events: none; }
+.tisso-option select { display: block; appearance: none; width: 100%; min-height: 41px; padding: 8px 60px 8px 10px; border: 1px solid #888; background: white; color: black; font-size: 16px; line-height: 23px; }
+.tisso-status { min-height: 40px; margin: 12px 0 18px !important; font-size: 13px; line-height: 18px; color: #9d1a1a; }
+.tisso-add { width: 100%; min-height: 45px; gap: 28px; }
+.tisso-add:disabled { cursor: not-allowed; }
+.tisso-add:disabled:hover { color: white !important; }
+.tisso-add:disabled::before { display: none; }
+@media (min-width: 1441px) {
+  .tisso-hero { height: calc(100vw * .541667); }
+  .tisso-art--top { height: calc(100vw * .270833); }
+  .tisso-art--bottom { top: calc(100vw * .270833); }
+  .tisso-hero-copy { top: calc(100vw * .2875); }
+  .tisso-hero h1 { font-size: calc(100vw * .048611); }
+}
+@media (min-width: 750px) and (max-width: 1100px) {
+  .tisso-bar { padding-inline: 24px; }
+  .tisso-brand { font-size: 24px; }
+  .tisso-hero h1 { font-size: 48px; }
+  .tisso-hero-copy { width: 48%; }
+  .tisso-description { font-size: 17px; line-height: 25px; }
+  .tisso-grid { padding-inline: 24px; }
+}
+@media (max-width: 749px) {
+  .tisso-bar { min-height: 64px; padding: 15px 16px; display: flex; justify-content: center; }
+  .tisso-brand { font-size: 30px; }
+  .tisso-menu-toggle { position: absolute; left: 13px; top: 20px; display: grid; place-items: center; border: 0; padding: 0; width: 24px; height: 24px; background: transparent; color: black; cursor: pointer; }
+  .tisso-bar-message, .tisso-top-button { display: none; }
+  .tisso-mobile-menu:not([hidden]) { position: absolute; top: 100%; left: 0; right: 0; z-index: 5; display: grid; gap: 12px; padding: 20px; background: #f5f5f5; box-shadow: 0 3px 6px #0002; }
+  .tisso-hero { height: 424px; }
+  .tisso-art--top { display: none; }
+  .tisso-hero-copy { top: 44px; left: 16px; width: calc(100% - 32px); text-align: center; }
+  .tisso-hero h1 { font-size: 30px; line-height: 40px; white-space: normal; }
+  .tisso-description--desktop { display: none; }
+  .tisso-description--mobile { display: block; margin: 16px auto 0 !important; max-width: 330px; font-size: 16px; line-height: 22px; }
+  .tisso-art--bottom { top: 168px; left: 0; width: 100%; height: 256px; }
+  .tisso-art--bottom img { width: auto; height: 100%; transform: translateX(-20%); }
+  .tisso-art--bottom:has(.tisso-mobile-art) .tisso-default-art { display: none; }
+  .tisso-mobile-art { display: block !important; width: 100% !important; height: 100% !important; object-fit: cover; transform: none !important; }
+  .tisso-shop-button { width: 193px; min-height: 45px; margin-top: 193px; font-size: 16px; gap: 24px; padding-inline: 12px; }
+  .tisso-strip { min-height: 36px; font-size: 14px; line-height: 20px; }
+  .tisso-strip-desktop { display: none; }
+  .tisso-strip-mobile { display: inline; }
+  .tisso-grid { padding: 40px 15px 16px; }
+  .tisso-grid-heading { font-size: 24px; line-height: 32px; text-align: center; margin-bottom: 20px !important; }
+  .tisso-products { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; }
+  .tisso-product { aspect-ratio: 169 / 186; }
+  .tisso-hotspot { left: var(--hotspot-mobile-x); top: var(--hotspot-mobile-y); width: 18px; height: 18px; padding: 3px; }
+  .tisso-hotspot::after { inset: -13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tisso-button::before, .tisso-arrow { transition: none; }
+}
